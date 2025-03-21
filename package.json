@@ -40,4 +40,7 @@
     "popper.js": "^1.16.1",
     "tilt.js": "^1.2.1"
   }
+  "engines": {
+  "node": "16.x"
+}
 }
