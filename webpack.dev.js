@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const path = require('path');
 
 module.exports = merge(common, {
@@ -20,10 +20,21 @@ module.exports = merge(common, {
       {
         test: /\.scss$/,
         use: [
-          'style-loader', //3. Inject styles into DOM
-          'css-loader', //2. Turns css into commonjs
-          'sass-loader'
-        ] //1. Turns sass into css
+          'style-loader', // 3. Inject styles into DOM
+          'css-loader',   // 2. Turns css into commonjs
+          'sass-loader'   // 1. Turns sass into css
+        ]
+      },
+      {
+        test: /\.(jpg|jpeg|png|gif|svg)$/,  // Match image files
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/images/[name].[hash].[ext]'  // Customize the output name and directory
+            }
+          }
+        ]
       }
     ]
   }

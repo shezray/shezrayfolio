@@ -1,22 +1,24 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const common = require('./webpack.common');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    filename: '[name].[contentHash].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].[contenthash].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'assets/images/[name][hash][ext]' // Ensure images go to the correct directory
   },
   optimization: {
+    minimize: true,
     minimizer: [
-      new OptimizeCssAssetsPlugin(),
       new TerserPlugin(),
+      new CssMinimizerPlugin(),
       new HtmlWebpackPlugin({
         template: './src/template.html',
         favicon: './src/assets/favicon.png',
@@ -31,18 +33,35 @@ module.exports = merge(common, {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: '[name].[contentHash].css'
+      filename: '[name].[contenthash].css'
     })
   ],
   module: {
     rules: [
       {
+        test: /\.(png|jpe?g|gif|svg)$/i, // Ensure images are handled correctly
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name][hash][ext]'
+        }
+      },
+      {
         test: /\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader, //3. Extract css into files
-          'css-loader', //2. Turns css into commonjs
+          MiniCssExtractPlugin.loader,
+          'css-loader',
           'sass-loader'
-        ] //1. Turns sass into css
+        ]
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader', // Ensure JS files are transpiled
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
   }
