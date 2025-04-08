@@ -1,18 +1,18 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const common = require('./webpack.common');
+// webpack.prod.js
 const { merge } = require('webpack-merge');
-const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const common = require('./webpack.common');
 const TerserPlugin = require('terser-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    assetModuleFilename: 'assets/images/[name][hash][ext]' // Ensure images go to the correct directory
+    assetModuleFilename: 'assets/images/[name][hash][ext]',
   },
   optimization: {
     minimize: true,
@@ -25,8 +25,8 @@ module.exports = merge(common, {
         minify: {
           removeAttributeQuotes: true,
           collapseWhitespace: true,
-          removeComments: true
-        }
+          removeComments: true,
+        },
       })
     ]
   },
@@ -39,11 +39,11 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif|svg)$/i, // Ensure images are handled correctly
+        test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[name][hash][ext]'
-        }
+          filename: 'assets/images/[name][hash][ext]',
+        },
       },
       {
         test: /\.scss$/,
@@ -57,7 +57,7 @@ module.exports = merge(common, {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader', // Ensure JS files are transpiled
+          loader: 'babel-loader',
           options: {
             presets: ['@babel/preset-env']
           }
