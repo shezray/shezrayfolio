@@ -1,9 +1,10 @@
 // webpack.prod.js
+const path = require('path'); // ✅ This was missing
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin'); // fixed import (was previously incorrect)
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
