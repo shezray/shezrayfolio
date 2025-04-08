@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png" />
+
+    <title> Shezray's Portfolio</title>
+    <meta name="keywords" content="[], [], skill" />
+    <meta name="description" content="Shezray | Software Developer" />
+
+    <!-- Required libraries -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+      ScrollReveal({ reset: false });
+    </script>
+
+    <!-- GitHub button script -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- Include the jQuery and Tilt.js scripts here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tilt.js@1.2.1"></script>
+
+  </head>
+
+  <body>
+    <div id="top"></div>
+
+    <!-- Hero Section -->
+    <div id="hero" class="jumbotron">
+      <div class="container">
+        <h1 class="hero-title load-hidden">
+          Hi, my name is <span class="text-color-main">Shezray Mirza</span>
+          <br />
+          I'm a Front-End Developer.
+        </h1>
+        <p class="hero-cta load-hidden">
+          <a class="cta-btn cta-btn--hero" href="#about">Portfolio</a>
+        </p>
+      </div>
+    </div>
+    <!-- /END Hero Section -->
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About me</h2>
+        <div class="row about-wrapper">
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__image">
+              <img
+                class="img-fluid rounded shadow-lg"
+                height="auto"
+                width="300px"
+                src="assets/profile.jpg"
+                alt="Profile Image"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div class="about-wrapper__info">
+              <p class="about-wrapper__info-text">
+                I am a developer with strong technical skills and an extremely artistic background. I have always had a strong passion for design and creation since childhood. I am extremely ambitious and channel all of my creative energy into my work. I strive to build immersive, user-centric, and aesthetically pleasing web applications.
+              </p>
+              <p class="about-wrapper__info-text">
+                I specialize in Front-End development and am primarily well-versed in Javascript, React+Redux, HTML, and CSS. Check out my work below, to see some of the projects I have worked on recently.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END About Section -->
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <div class="container">
+        <div class="project-wrapper">
+          <h2 class="section-title dark-blue-text">Projects</h2>
+
+          <!-- Project Example: Custom Background Generator -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text">
+                <h3 class="project-wrapper__text-title">Custom Background Generator</h3>
+                <div>
+                  <p class="mb-4">
+                    An interactive application I created using Javascript, HTML, and CSS in which a user can create a custom gradient background and color selection.
+                  </p>
+                </div>
+                <a target="_blank" class="cta-btn cta-btn--hero" href="https://shezray.github.io/custom-background-generator/">
+                  See Live
+                </a>
+                <a target="_blank" class="cta-btn text-color-main" href="https://github.com/shezray/custom-background-generator">
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image">
+                <a href="https://shezray.github.io/custom-background-generator/" target="_blank">
+                  <div data-tilt class="thumbnail rounded tilt-element">
+                    <img class="img-fluid" src="assets/project1.jpg" alt="Custom Background Generator Project" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Example: Face Scanner -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text">
+                <h3 class="project-wrapper__text-title">Face Scanner</h3>
+                <div>
+                  <p class="mb-4">
+                    A face detection web app built using React, JSX, Node.js, Express.js, PostgreSQL, and the Clarifai API.
+                  </p>
+                </div>
+                <a target="_blank" class="cta-btn cta-btn--hero" href="https://shezray.github.io/face-scanner/">
+                  See Live
+                </a>
+                <a target="_blank" class="cta-btn text-color-main" href="https://github.com/shezray/face-scanner">
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image">
+                <a href="https://shezray.github.io/face-scanner/" target="_blank">
+                  <div data-tilt class="thumbnail rounded tilt-element">
+                    <img class="img-fluid" src="assets/project2.jpg" alt="Face Scanner Project" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Example: RoboSquad -->
+          <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text">
+                <h3 class="project-wrapper__text-title">RoboSquad</h3>
+                <div>
+                  <p class="mb-4">
+                    A React.js application that integrates with an API to display robot data and provides user interactions through Redux.
+                  </p>
+                </div>
+                <a target="_blank" class="cta-btn cta-btn--hero" href="https://shezray.github.io/robosquad/">
+                  See Live
+                </a>
+                <a target="_blank" class="cta-btn text-color-main" href="https://github.com/shezray/robosquad">
+                  Source Code
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image">
+                <a href="https://shezray.github.io/robosquad/" target="_blank">
+                  <div data-tilt class="thumbnail rounded tilt-element">
+                    <img class="img-fluid" src="assets/project3.jpg" alt="RoboSquad Project" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add additional projects as needed -->
+
+        </div>
+      </div>
+    </section>
+    <!-- /END Projects Section -->
+
+    <!-- Footer Section -->
+    <footer class="footer navbar-static-bottom">
+      <div class="container">
+        <a href="#top" class="back-to-top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <div class="social-links">
+          <a href="https://twitter.com/ShezrayOfficial" target="_blank">
+            <i class="fa fa-twitter fa-inverse"></i>
+          </a>
+          <a href="https://linkedin.com/in/shezray" target="_blank">
+            <i class="fa fa-linkedin fa-inverse"></i>
+          </a>
+          <a href="https://github.com/shezray" target="_blank">
+            <i class="fa fa-github fa-inverse"></i>
+          </a>
+        </div>
+
+        <hr />
+
+        <p class="footer__text"> Designed by Shezray Mirza © 2020</p>
+      </div>
+    </footer>
+    <!-- /END Footer Section -->
+
+    <!-- Add the script to initialize Tilt.js -->
+    <script>
+      $(document).ready(function () {
+        // Apply the tilt effect to all elements with class "tilt-element"
+        $('.tilt-element').each(function () {
+          $(this).tilt({
+            maxTilt: 25,          // Maximum tilt value
+            perspective: 1000,    // Depth of the 3D effect
+            speed: 400,           // Speed of the tilt effect
+            easing: "cubic-bezier(.03,.98,.52,.99)"  // Easing for smooth transition
+          });
+        });
+      });
+    </script>
+
+  </body>
+</html>

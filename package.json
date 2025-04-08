@@ -1,0 +1,52 @@
+{
+  "name": "simplefolio",
+  "version": "1.0.1",
+  "description": "A clean, beautiful and responsive portfolio template for Developers!",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cobidev/simplefolio"
+  },
+  "keywords": [],
+  "author": "Jacobo Martinez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cobidev/simplefolio/issues"
+  },
+  "homepage": "https://github.com/cobidev/simplefolio#readme",
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "babel-loader": "^10.0.0",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.11.0",
+    "css-minimizer-webpack-plugin": "^7.0.2",
+    "file-loader": "^6.2.0",
+    "html-loader": "^2.1.2",
+    "html-webpack-plugin": "^5.0.0",
+    "mini-css-extract-plugin": "^2.5.0",
+    "sass": "^1.86.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.15.2",
+    "webpack-merge": "^5.10.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.1.0",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
+    "popper.js": "^1.16.1",
+    "tilt.js": "^1.2.1"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}
